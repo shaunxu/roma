@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{161EF270-DDC5-4BFA-8B1B-89C94E737A96}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Roma.WCF</RootNamespace>
+    <AssemblyName>Roma.WCF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AsyncResult.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="InputQueue.cs" />
+    <Compile Include="MessageBusChannelBase.cs" />
+    <Compile Include="MessageBusChannelFactoryBase.cs" />
+    <Compile Include="MessageBusChannelListenerBase.cs" />
+    <Compile Include="MessageBusDuplexChannel.cs" />
+    <Compile Include="MessageBusDuplexChannelFactory.cs" />
+    <Compile Include="MessageBusDuplexChannelListener.cs" />
+    <Compile Include="MessageBusDuplexSessionChannel.cs" />
+    <Compile Include="MessageBusDuplexSessionChannelFactory.cs" />
+    <Compile Include="MessageBusDuplexSessionChannelListener.cs" />
+    <Compile Include="MessageBusInputChannel.cs" />
+    <Compile Include="MessageBusInputChannelListener.cs" />
+    <Compile Include="MessageBusInputSessionChannel.cs" />
+    <Compile Include="MessageBusInputSessionChannelListener.cs" />
+    <Compile Include="MessageBusOutputChannel.cs" />
+    <Compile Include="MessageBusOutputChannelFactory.cs" />
+    <Compile Include="MessageBusOutputSessionChannel.cs" />
+    <Compile Include="MessageBusOutputSessionChannelFactory.cs" />
+    <Compile Include="MessageBusReplySessionChannel.cs" />
+    <Compile Include="MessageBusReplySessionChannelListener.cs" />
+    <Compile Include="MessageBusRequestSessionChannel.cs" />
+    <Compile Include="MessageBusRequestSessionChannelFactory.cs" />
+    <Compile Include="Sessions.cs" />
+    <Compile Include="MessageBusReplyChannel.cs" />
+    <Compile Include="MessageBusReplyChannelListener.cs" />
+    <Compile Include="MessageBusRequestChannel.cs" />
+    <Compile Include="MessageBusRequestChannelFactory.cs" />
+    <Compile Include="MessageBusRequestContext.cs" />
+    <Compile Include="MessageBusTransportBinding.cs" />
+    <Compile Include="MessageBusTransportBindingElement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Roma.Bus\Roma.Bus.csproj">
+      <Project>{55671FF5-855F-4137-9CBD-D340A7330A88}</Project>
+      <Name>Roma.Bus</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
